@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khayreah Palmera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #96ecd0;
+            color: #444;
+            line-height: 1.7;
+            padding-bottom: 30px;
+        }
+
+        /* Header Banner */
+        .header-banner {
+            background: #23c285;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+        .header-banner h1 {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+        .header-banner p {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            background: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .nav-menu a {
+            display: block;
+            color: #1ba86d;
+            font-size: 22px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 14px 0;
+            transition: 0.2s;
+        }
+        .nav-menu a:hover {
+            color: #30da77;
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .card h2 {
+            color: #64f7c6;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        /* Profile Photo */
+        .profile-pic {
+            display: block;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #64f7ba;
+            object-fit: cover;
+            margin: 0 auto 25px;
+        }
+
+        /* Text and Lists */
+        .card p {
+            font-size: 19px;
+            margin-bottom: 18px;
+        }
+        .card ul, .card ol {
+            margin: 15px 0 15px 40px;
+            font-size: 19px;
+        }
+        .card li {
+            margin-bottom: 8px;
+        }
+        .card h3 {
+            font-size: 24px;
+            color: #555;
+            margin: 25px 0 12px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            width: fit-content;
+            background: #64f7a6;
+            color: white !important;
+            padding: 12px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 19px;
+            margin: 20px auto;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #099b57;
+        }
+
+        /* Media Elements */
+        .media {
+            width: 100%;
+            border-radius: 18px;
+            margin: 15px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
+        .folder-link {
+            display: block;
+            background: #fff0f5;
+            border: 2px solid #64f7b2;
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+            text-decoration: none;
+            color: #4de4aa;
+            font-weight: 600;
+            font-size: 20px;
+            margin: 15px 0;
+            transition: 0.2s;
+        }
+        .folder-link:hover {
+            background: #50e098;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: white;
+            font-size: 17px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header-banner">
+        <h1>Khayreah Palmera</h1>
+        <p>Student | Web Design Learner | Tech Lover</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-menu">
+        <a href="#about">About Me</a>
+        <a href="#school">School Story</a>
+        <a href="#video">Video</a>
+        <a href="#interests">Interests</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#folder">My Works</a>
+    </div>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <div class="card" id="about">
+            <img src="Khayreah.jpg" alt="Khayreah Palmera" class="profile-pic">
+            <h2>About Me</h2>
+            <p>Hello! My name is <strong>Khayreah Palmera</strong>. I am a student who enjoys learning technology, mathematics, cooking, and discovering new things every day.</p>
+            
+            <h3>My Hobbies</h3>
+            <ul>
+                <li>Cooking</li>
+                <li>Playing Volleyball</li>
+                <li>Cleaning</li>
+            </ul>
+
+            <a href="https://www.instagram.com" target="_blank" class="btn">Visit Instagram</a>
+        </div>
+
+        <!-- School Story Section -->
+        <div class="card" id="school">
+            <img src="Ict Laboratory.jpg" alt="School Building" class="media">
+            <h2>My School Story</h2>
+            <p>This photo reminds me of my journey as a student. Every day in school teaches me new lessons and helps me improve my skills especially in technology subjects.</p>
+            
+            <h3>What I See</h3>
+            <ol>
+                <li>Computer laboratory area</li>
+                <li>Trees around the campus</li>
+                <li>Multi-storey school building</li>
+                <li>Bright yellow painted walls</li>
+                <li>White drainage pipes</li>
+            </ol>
+        </div>
+
+        <!-- Video Section -->
+        <div class="card" id="video">
+            <h2>My Video</h2>
+            <video controls class="media">
+                <source src="Him.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Interests Section -->
+        <div class="card" id="interests">
+            <h2>My Interests</h2>
+            <h3>Graphic Design</h3>
+            <p>Creating posters, banners, and creative layouts.</p>
+            <h3>Web Design</h3>
+            <p>Making nice and working websites using HTML and CSS.</p>
+            <h3>Coding</h3>
+            <p>Writing programs and making simple applications.</p>
+            <h3>Criminology</h3>
+            <p>Learning about laws, justice, and community service.</p>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="card" id="gallery">
+            <h2>My Gallery</h2>
+            <div class="gallery-grid">
+                <img src="pic1.jpg" alt="Image 1">
+                <img src="pic2.jpg" alt="Image 2">
+                <img src="pic3.jpg" alt="Image 3">
+                <img src="pic4.jpg" alt="Image 4">
+            </div>
+        </div>
+
+        <!-- My Works Section -->
+        <div class="card" id="folder">
+            <h2>My Works Folder</h2>
+            <p>Click below to open all my tasks and projects:</p>
+            <a href="https://drive.google.com/drive/folders/1IrTrCnf825Em8T-SFn2UEVHqZTPxSWE1" target="_blank" class="folder-link">📂 All My Tasks</a>
+            <a href="https://drive.google.com/drive/folders/1XQSMPq0UJ1JWBf3GN0UzE1Bz1z0zUK5U" target="_blank" class="folder-link">Task 7</a>
+            <a href="https://drive.google.com/drive/folders/1gvJjsLUDlHdKSftICsSGAFaEGhzLRkAw" target="_blank" class="folder-link">Task 8</a>
+            <a href="https://drive.google.com/drive/folders/1CpzmEgu4Vxq7yUvh_FnHSYwl65eEDC6p" target="_blank" class="folder-link">Task 9</a>
+            <a href="https://drive.google.com/drive/folders/1elZaDiZYhsumxv5ZpsGcFLPQURpqZnvP" target="_blank" class="folder-link">Task 11</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card">
+            <h2>Contact Information</h2>
+            <p><strong>Name:</strong> Khayreah Palmera</p>
+            <p><strong>Email:</strong> khayreahpalmeras@email.com</p>
+            <p><strong>School:</strong> Your School Name</p>
+            <p><strong>Strand:</strong> ICT Student</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Khayreah Palmera. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
