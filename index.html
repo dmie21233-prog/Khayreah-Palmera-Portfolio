@@ -166,6 +166,64 @@
             padding: 20px;
             margin-top: 20px;
         }
+            /* Calculator Design */
+    .calculator {
+      max-width: 340px;
+      margin: 25px auto;
+      background: #2c5c54;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .calc-display {
+      width: 100%;
+      height: 65px;
+      background: #f0f8ff;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 12px;
+      font-size: 28px;
+      font-family: Consolas, monospace;
+      color: #2c5c54;
+      overflow-x: auto;
+    }
+    .calc-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .calc-btn {
+      padding: 15px 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #8dd3bb;
+      color: #2c5c54;
+      transition: 0.15s;
+    }
+    .calc-btn:hover { background: #a8e2cc; transform: translateY(-1px); }
+    .calc-btn.operator { background: #2a9d8f; color: white; }
+    .calc-btn.operator:hover { background: #21867a; }
+    .calc-btn.clear { background: #e76f51; color: white; }
+    .calc-btn.clear:hover { background: #f05430; }
+    .calc-btn.equal { background: #264653; color: white; grid-column: span 2; }
+    .calc-btn.equal:hover { background: #1d3742; }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#f8fffd;
+      color:#555;
+      font-size:14px;
+      margin-top:20px
+    }
+         
+        
     </style>
 </head>
 <body>
@@ -184,12 +242,13 @@
         <a href="#interests">Interests</a>
         <a href="#gallery">Gallery</a>
         <a href="#folder">My Works</a>
+        <a href="#calculator">Calculator</a>
     </div>
 
     <div class="container">
         <!-- About Me Section -->
         <div class="card" id="about">
-            <img src="profile.jpg" alt="Khayreah Palmera" class="profile-pic">
+            <img src="Khayreah.jpg" alt="Khayreah Palmera" class="profile-pic">
             <h2>About Me</h2>
             <p>Hello! My name is <strong>Khayreah Palmera</strong>. I am a student who enjoys learning technology, mathematics, cooking, and discovering new things every day.</p>
             
@@ -197,7 +256,7 @@
             <ul>
                 <li>Cooking</li>
                 <li>Playing Volleyball</li>
-                <li>Playing Surfing</li>
+                <li>Cleaning</li>
             </ul>
 
             <a href="https://www.instagram.com" target="_blank" class="btn">Visit Instagram</a>
@@ -257,9 +316,36 @@
             <p>Click below to open all my tasks and projects:</p>
             <a href="https://drive.google.com/drive/folders/1IrTrCnf825Em8T-SFn2UEVHqZTPxSWE1" target="_blank" class="folder-link">📂 All My Tasks</a>
             <a href="https://drive.google.com/drive/folders/1gvJjsLUDlHdKSftICsSGAFaEGhzLRkAw" target="_blank" class="folder-link">Mini Study Corner</a>
-            <a href="https://drive.google.com/drive/folders/1CpzmEgu4Vxq7yUvh_FnHSYwl65eEDC6p" target="_blank" class="folder-link">About Me</a>
+            <a href="https://drive.google.com/drive/folders/1CpzmEgu4Vxq7yUvh_FnHSYwl65eEDC6p" target="_blank" class="folder-link">A Little Story About Me</a>
             <a href="https://drive.google.com/drive/folders/1elZaDiZYhsumxv5ZpsGcFLPQURpqZnvP" target="_blank" class="folder-link">Student Portal</a>
         </div>
+        <div class="card" id="calculator">
+        <h2>My Simple Calculator</h2>
+        <div class="calculator">
+            <input type="text" class="calc-display" id="display" readonly placeholder="0">
+           
+            <div class="calc-buttons">
+                <button class="calc-btn clear" onclick="clearDisplay()">C</button>
+                <button class="calc-btn" onclick="deleteLast()">⌫</button>
+                <button class="calc-btn operator" onclick="appendValue('/')">÷</button>
+                <button class="calc-btn operator" onclick="appendValue('*')">×</button>
+                <button class="calc-btn" onclick="appendValue('7')">7</button>
+                <button class="calc-btn" onclick="appendValue('8')">8</button>
+                <button class="calc-btn" onclick="appendValue('9')">9</button>
+                <button class="calc-btn operator" onclick="appendValue('-')">−</button>
+                <button class="calc-btn" onclick="appendValue('4')">4</button>
+                <button class="calc-btn" onclick="appendValue('5')">5</button>
+                <button class="calc-btn" onclick="appendValue('6')">6</button>
+                <button class="calc-btn operator" onclick="appendValue('+')">+</button>
+                <button class="calc-btn" onclick="appendValue('1')">1</button>
+                <button class="calc-btn" onclick="appendValue('2')">2</button>
+                <button class="calc-btn" onclick="appendValue('3')">3</button>
+                <button class="calc-btn" onclick="appendValue('.')">.</button>
+                <button class="calc-btn" onclick="appendValue('0')">0</button>
+                <button class="calc-btn equal" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    </div>
 
         <!-- Contact Section -->
         <div class="card">
@@ -274,6 +360,18 @@
     <footer>
         © 2026 Khayreah Palmera. All Rights Reserved.
     </footer>
+
+</body>
+</html>
+
+<script>
+function toggleFolder() { document.getElementById('myTasks').classList.toggle('open'); }
+function appendValue(v) { document.getElementById('display').value += v; }
+function clearDisplay() { document.getElementById('display').value = ''; }
+function deleteLast() { const d=document.getElementById('display'); d.value=d.value.slice(0,-1); }
+function calculateResult() { const d=document.getElementById('display'); try{d.value=eval(d.value)||'';}catch{d.value='Error';setTimeout(()=>d.value='',1500);} }
+document.querySelectorAll('.nav a').forEach(l=>{l.addEventListener('click',e=>{e.preventDefault();document.querySelector(l.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+</script>
 
 </body>
 </html>
